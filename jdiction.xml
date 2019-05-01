@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jdiction>
+  <!-- Version 1.1 -->
+  <component>com_joomgallery</component>
+  <sections>
+    <section>
+      <tables>
+        <table>
+          <name>#__joomgallery</name>
+          <key>id</key>
+          <class>TableJoomgalleryImages</class>
+          <file>joomgalleryimages.php</file>
+          <cache fullfetch="0" />
+        </table>
+      </tables>
+      <views>
+        <view name="image" list="images" layout="form" default="true" key="cid">
+          <form import="image.xml">
+            <fieldset name="main">
+              <field name="imgtitle" />
+              <field name="alias" type="jdalias" field="imgtitle" hint="JFIELD_ALIAS_PLACEHOLDER" export="false" />
+              <field name="metakey" />
+              <field name="metadesc" />
+              <field name="imgtext" />
+            </fieldset>
+          </form>
+        </view>
+      </views>
+    </section>
+    <section>
+      <tables>
+        <table>
+          <name>#__joomgallery_catg</name>
+          <key>cid</key>
+          <class>TableJoomgalleryCategories</class>
+          <file>joomgallerycategories.php</file>
+          <cache fullfetch="0" />
+        </table>
+      </tables>
+      <views>
+        <view name="category" list="categories" layout="form" default="false">
+          <form import="category.xml">
+            <fieldset name="main">
+              <field name="name" />
+              <field name="alias" type="jdalias" field="name" hint="JFIELD_ALIAS_PLACEHOLDER" export="false" />
+              <field name="metakey" />
+              <field name="metadesc" />
+              <field name="description" />
+            </fieldset>
+          </form>
+        </view>
+      </views>
+    </section>
+  </sections>
+</jdiction>
